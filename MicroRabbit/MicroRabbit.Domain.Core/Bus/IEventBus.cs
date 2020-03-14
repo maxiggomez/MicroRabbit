@@ -13,7 +13,7 @@ namespace MicroRabbit.Domain.Core.Bus
     ///     - Publicar un evento.
     ///     - Subscribirse a un evento.
     /// </summary>
-    interface IEventBus
+    public interface IEventBus
     {
         Task SendCommand<T>(T command) where T : Command;
 
