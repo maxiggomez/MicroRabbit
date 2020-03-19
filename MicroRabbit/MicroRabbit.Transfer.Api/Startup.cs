@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using MediatR;
 using MicroRabbit.Banking.Domain.Events;
@@ -48,6 +49,8 @@ namespace MicroRabbit.Transfer.Api
 
             // Para configurar Inyección de dependencia
             RegisterServices(services);
+            // Para no validar https
+            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
         }
 
